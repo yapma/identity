@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRoleBase", "SimpleRoleBase\SimpleRoleBase.csproj", "{EE8ED6F6-17F2-4E48-959F-34FA1E6585D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8ED6F6-17F2-4E48-959F-34FA1E6585D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8ED6F6-17F2-4E48-959F-34FA1E6585D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8ED6F6-17F2-4E48-959F-34FA1E6585D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8ED6F6-17F2-4E48-959F-34FA1E6585D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE01F1C0-EBAB-4CBB-9F40-1A942618D79D}
+	EndGlobalSection
+EndGlobal
