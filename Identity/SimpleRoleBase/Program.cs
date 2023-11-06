@@ -75,7 +75,7 @@ builder.Services.AddAuthentication(x =>
     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(o =>
 {
-    var Key = Encoding.UTF8.GetBytes("This is my supper secret key for jwt");
+    var Key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]);
     o.SaveToken = true;
     o.TokenValidationParameters = new TokenValidationParameters
     {
@@ -83,14 +83,11 @@ builder.Services.AddAuthentication(x =>
         ValidateAudience = false,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "issuer",
-        ValidAudience = "issuer",
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Key)
     };
 });
 
-
-//await IdentityDataSeed(builder.Services.BuildServiceProvider());
 
 //
 var app = builder.Build();
@@ -111,36 +108,3 @@ app.MapControllers();
 
 
 app.Run();
-
-async Task IdentityDataSeed(IServiceProvider serviceProvider)
-{
-    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = serviceProvider.GetRequiredService<UserManager<User>>();
-
-    var roleExists = await roleManager.Roles.AnyAsync(x => x.Name == "Admin");
-    if (!roleExists)
-    {
-        await roleManager.CreateAsync(new IdentityRole() { Name = "Admin" });
-    }
-
-    var user = await userManager.FindByNameAsync("admin");
-    if (user == null)
-    {
-        User newUser = new User()
-        {
-            Id = "b74ddd14-6340-4840-95c2-db12554843e5",
-            UserName = "Admin",
-            Email = "admin@gmail.com",
-            LockoutEnabled = false,
-            PhoneNumber = "1234567890",
-            FirstName = "Admin FirstName",
-            LastName = "Admin LastName",
-        };
-
-        var createUserResult = await userManager.CreateAsync(newUser, "Admin@123");
-        if (createUserResult.Succeeded)
-        {
-            var xxx = await userManager.AddToRoleAsync(newUser, "Admin");
-        }
-    }
-}

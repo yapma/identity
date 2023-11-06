@@ -19,11 +19,6 @@ namespace SimpleRoleBase.Contexts
             this.SeedUsers(builder);
             this.SeedUserRoles(builder);
 
-            // add single config
-            //builder.ApplyConfiguration<Book>(new BookEntityConfiguration());
-            // or use
-            builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
-
             base.OnModelCreating(builder);
         }
 
@@ -41,7 +36,7 @@ namespace SimpleRoleBase.Contexts
             };
 
             PasswordHasher<User> passwordHasher = new PasswordHasher<User>();
-            passwordHasher.HashPassword(user, "Admin@123");
+            user.PasswordHash = passwordHasher.HashPassword(user, "Admin@123");
 
             builder.Entity<User>().HasData(user);
         }
