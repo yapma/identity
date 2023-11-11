@@ -86,6 +86,19 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Policy1", policy =>
+    {
+        policy.RequireClaim("ReadEmail");
+    });
+
+    options.AddPolicy("Policy2", policy =>
+    {
+        policy.RequireClaim("SendEmail");
+        policy.RequireClaim("WriteEmail");
+    });
+});
 
 //
 var app = builder.Build();
