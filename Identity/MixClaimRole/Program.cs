@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using SimpleClaimBase.Contexts;
-using SimpleClaimBase.Models;
+using MixClaimRole.Contexts;
+using MixClaimRole.Models;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -62,7 +62,7 @@ builder.Services.AddSwaggerGen(config =>
         });
     config.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Sample of SimpleClaimBase",
+        Title = "Sample of MixOfClaimAndRole",
         Version = "v1",
     });
 });
@@ -112,7 +112,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(config =>
     {
-        config.DocumentTitle = "Sample of SimpleClaimBaseAuth";
+        config.DocumentTitle = "Sample of MixOfClaimAndRoleAuth";
     });
 }
 app.MapControllers();
