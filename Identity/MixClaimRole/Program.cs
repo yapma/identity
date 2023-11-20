@@ -88,15 +88,14 @@ builder.Services.AddAuthentication(x =>
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("Policy1", policy =>
+    options.AddPolicy("WriteEmail", policy =>
     {
-        policy.RequireClaim("ReadEmail");
+        policy.RequireClaim("WriteEmail");
     });
 
-    options.AddPolicy("Policy2", policy =>
+    options.AddPolicy("ReadEmail", policy =>
     {
-        policy.RequireClaim("SendEmail");
-        policy.RequireClaim("WriteEmail");
+        policy.RequireClaim("ReadEmail");
     });
 });
 
