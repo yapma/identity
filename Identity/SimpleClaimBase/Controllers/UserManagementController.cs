@@ -17,17 +17,14 @@ namespace SimpleClaimBase.Controllers
     [ApiController]
     public class UserManagementController : ControllerBase
     {
-        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _configuration;
 
         public UserManagementController(
-            RoleManager<IdentityRole> roleManager,
             UserManager<User> userManager,
             IConfiguration configuration
             )
         {
-            _roleManager = roleManager;
             _userManager = userManager;
             _configuration = configuration;
         }
