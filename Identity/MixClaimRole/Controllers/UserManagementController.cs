@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using MixClaimRole.Extentions;
 using MixClaimRole.Models;
 using MixClaimRole.Models.DTOs;
 using System.IdentityModel.Tokens.Jwt;
@@ -48,7 +49,7 @@ namespace MixClaimRole.Controllers
             if (result.Succeeded)
                 return Result.Success();
 
-            return Result.Error();
+            return Result.Error(result.GetErrorsDescription());
         }
 
         [HttpGet("GetAllRoles")]
@@ -117,7 +118,7 @@ namespace MixClaimRole.Controllers
             if (createUserResult.Succeeded)
                 return Result.Success();
 
-            return Result.Error();
+            return Result.Error(createUserResult.GetErrorsDescription());
         }
 
         [HttpPost("AssignRoleToUser")]
@@ -144,7 +145,7 @@ namespace MixClaimRole.Controllers
             if (result.Succeeded)
                 return Result.Success();
             
-            return Result.Error();
+            return Result.Error(result.GetErrorsDescription());
         }
 
         [HttpPost("DeleteRoleFromUser")]
@@ -171,7 +172,7 @@ namespace MixClaimRole.Controllers
             if (result.Succeeded)
                 return Result.Success();
 
-            return Result.Error();
+            return Result.Error(result.GetErrorsDescription());
         }
 
         [HttpPost("Login")]
