@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleRoleBase", "SimpleRol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleClaimBase", "SimpleClaimBase\SimpleClaimBase.csproj", "{1A0A4D15-795F-4ED8-9E9C-64F56F8E777E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixClaimRole", "MixClaimRole\MixClaimRole.csproj", "{BD583E50-F92B-4501-9678-C9FA5DE456C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MixClaimRole", "MixClaimRole\MixClaimRole.csproj", "{BD583E50-F92B-4501-9678-C9FA5DE456C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermissionBase", "PermissionBase\PermissionBase.csproj", "{E2112A4D-A532-45AA-920F-ADD2BC527605}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BD583E50-F92B-4501-9678-C9FA5DE456C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD583E50-F92B-4501-9678-C9FA5DE456C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD583E50-F92B-4501-9678-C9FA5DE456C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2112A4D-A532-45AA-920F-ADD2BC527605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2112A4D-A532-45AA-920F-ADD2BC527605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2112A4D-A532-45AA-920F-ADD2BC527605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2112A4D-A532-45AA-920F-ADD2BC527605}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
